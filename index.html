@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Trub Chat </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-comments"></i>Trub Chat </h1>
+        </div>
+        
+        <div class="form-container active" id="auth-container">
+            <div id="login-container" class="login-container active">
+                <h2>Login to Chat</h2>
+                <input type="email" id="login-email" placeholder="Email">
+                <input type="password" id="login-password" placeholder="Password">
+                <button id="login-btn">Login</button>
+                <div class="switch-form">
+                    Don't have an account? <a id="show-register">Register</a>
+                </div>
+            </div>
+            
+            <div id="register-container" class="register-container">
+                <h2>Create Account</h2>
+                <input type="text" id="register-name" placeholder="Full Name">
+                <input type="email" id="register-email" placeholder="Email">
+                <input type="password" id="register-password" placeholder="Password">
+                <button id="register-btn">Register</button>
+                <div class="switch-form">
+                    Already have an account? <a id="show-login">Login</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <div class="user-info">
+                    <div class="user-avatar" id="user-avatar">U</div>
+                    <div>
+                        <div id="user-name">User</div>
+                        <div class="online-status">
+                            <div class="status-dot"></div>
+                            <span>Online</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="logout-btn">Logout</button>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <div class="message other-message">
+                    <div class="message-sender">System</div>
+                    <div class="message-content">Welcome to Firebase Chat! Start a conversation.</div>
+                    <div class="message-time">Just now</div>
+                </div>
+            </div>
+            
+            <div class="emoji-container" id="emoji-container">
+                <span class="emoji">😀</span>
+                <span class="emoji">😂</span>
+                <span class="emoji">😍</span>
+                <span class="emoji">🤔</span>
+                <span class="emoji">😎</span>
+                <span class="emoji">👍</span>
+                <span class="emoji">👋</span>
+                <span class="emoji">🎉</span>
+                <span class="emoji">❤️</span>
+                <span class="emoji">🔥</span>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="message-input" class="message-input" placeholder="Type a message...">
+                <button class="emoji-btn" id="emoji-toggle"><i class="far fa-smile"></i></button>
+                <button class="send-btn" id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+    
+    <!-- Application Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
